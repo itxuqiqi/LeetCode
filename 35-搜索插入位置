@@ -1,0 +1,39 @@
+#标准二分法，复杂度O(logn)
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+        int left = 0, right = nums.length - 1; // 注意
+        while(left <= right) { // 注意
+            int mid = (left + right) / 2; // 注意
+            if(nums[mid] == target) { // 注意
+                // 相关逻辑
+            } else if(nums[mid] < target) {
+                left = mid + 1; // 注意
+            } else {
+                right = mid - 1; // 注意
+            }
+        }
+        // 相关返回值
+        return 0;
+    }
+}
+
+#个人普通循环暴力求解法，复杂度 O(n) 
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+        int i=0;
+        int dos=0;
+        while(i<nums.length){
+            if(nums[i]==target){
+                dos=i;
+                break;
+            }else if(nums[i]>target){
+                dos=i;
+                break;
+            }else{
+                dos=i+1;
+            }
+            i++;
+        }
+        return dos;
+    }
+}
