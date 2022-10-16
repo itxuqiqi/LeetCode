@@ -1,0 +1,16 @@
+class Solution {
+    public int[] plusOne(int[] digits) {
+        for(int i=digits.length-1;i>=0;i--){
+            if(digits[i]!=9){
+                digits[i]++;
+                return digits;
+            }
+            digits[i]=0;
+        }
+        //这里就验证说明数组里都是9
+        int [] temp =new int[digits.length+1];
+        temp[0]=1;
+        return temp;
+    }
+}
+//这个思路是首先将数组倒着循环，遇到9变0；如果不是全是9，就不用重新申请数组长度，直接将最后一个不是9的数加1，返回数组即可。
